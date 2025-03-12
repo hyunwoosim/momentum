@@ -7,11 +7,13 @@
   <link rel="stylesheet" href="style.css">
   <title>Momentum</title>
 </head>
+
 <body>
-  <div id="login-form">
-    <input type="text" placeholder="이름이 무엇입니까" />
-    <button>Log In</button>
-  </div>
+  <form class="hidden" id="login-form" >
+    <input required maxlength="15" type="text" placeholder="이름이 무엇입니까?" />
+    <input type="submit" />
+  </form>
+  <h1 id="greeting" class="hidden"></h1>
   <script src="app.js"></script>
 </body>
 

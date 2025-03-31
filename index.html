@@ -92,11 +92,22 @@
     }
 
     function App() {
+      const [index, setIndex] = React.useState("xx");
+      const onSelect = (event) => {
+        setIndex(event.target.value);
+      };
       return (
         <div>
           <h1>Super converter</h1>
-          <MinutesToHours />
-          <KmToMiles />
+          <select value={index} onChange={onSelect}>
+            <option value="xx">Select your units</option>
+            <option value="0">M & H </option>
+            <option value="1">KM & M </option>
+          </select>
+          <hr />
+          {index === "xx" ? "선택하세요" : null}
+          {index === "0" ? <MinutesToHours /> : null}
+          {index === "1" ? <KmToMiles /> : null}
         </div>
       );
     }
